@@ -1,0 +1,32 @@
+@media print {
+  /* Ensure the printed content fits the page */
+  .print-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Optionally, scale down if the content is too wide */
+  .print-container * {
+    page-break-inside: avoid;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Scale the content to fit the paper size */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  /* Optional: Scaling the content to fit the page */
+  .print-container {
+    transform: scale(0.9); /* Adjust as needed */
+    transform-origin: top left;
+  }
+}
